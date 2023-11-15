@@ -17,7 +17,10 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 	new = malloc(sizeof(*new));
 	if (new == NULL)
+	{
+		free_stack(stack);
 		hndlerr("Error: malloc failed", NULL, 0);
+	}
 	new->n = atoi(input);
 	new->next = NULL;
 	new->prev = NULL;
