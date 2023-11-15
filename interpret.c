@@ -20,6 +20,8 @@ void interpret(stack_t **stack, char *line, unsigned int ln)
 		{ NULL, NULL }
 	};
 
+	if (op == NULL)
+		return;
 	input = strtok(NULL, TOK_DEL);
 	for (i = 0; ops[i].opcode != NULL; i++)
 	{

@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 	stream = fopen(argv[1], "r");
 	if (stream == NULL)
 		hndlerr("Error: Can't open file", argv[1], line_number);
-	while (getline(&line, &len, stream) != EOF)
+	while (getline(&line, &len, stream) != -1)
 	{
 		line_number += 1;
 		interpret(&stack, line, line_number);
