@@ -26,7 +26,7 @@ int endswith(char *str, char *end)
  * validate_input - Validates the input
  * Return: boolean
  */
-int validate_input()
+int validate_input(void)
 {
 	unsigned int i;
 	bool isvalid = true;

@@ -54,7 +54,7 @@ int hndlerr(char *msg, char *file, unsigned int ln);
 
 /* utils.c */
 int endswith(char *str, char *end);
-int validate_input();
+int validate_input(void);
 void free_stack(stack_t **stack);
 
 /* interpret.c */
