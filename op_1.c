@@ -82,3 +82,17 @@ void pall(stack_t **stack, unsigned int line_number)
 		pall(&(*stack)->next, line_number);
 	}
 }
+
+/**
+ * nop - Does nothing
+ * @stack: the list
+ * @line_number: Current line in monty file
+ * Return: Nothing
+ */
+void nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+
+	return;
+}
