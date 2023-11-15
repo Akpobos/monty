@@ -39,3 +39,18 @@ void validate_input(unsigned int line_number)
 			hndlerr("usage: push integer", NULL, line_number);
 	}
 }
+
+/**
+ * free_stack - frees list
+ * @stack: The list
+ * Return: Nothing
+ */
+void free_stack(stack_t **stack)
+{
+	if (*stack != NULL)
+	{
+		free_stack(&(*stack)->next);
+		free(*stack);
+		*stack = NULL;
+	}
+}

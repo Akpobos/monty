@@ -28,6 +28,8 @@ int main(int argc, char **argv)
 		interpret(&stack, line, line_number);
 	}
 	free(line);
+	line = NULL;
+	free_stack(&stack);
 	fclose(stream);
 	exit(EXIT_SUCCESS);
 }
