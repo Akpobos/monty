@@ -32,6 +32,30 @@ void push(stack_t **stack, unsigned int line_number)
 }
 
 /**
+ * pop - removes the top element of the stack.
+ * @stack: the list
+ * @line_number: Current line in monty file
+ * Return: Nothing
+ */
+void pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp = NULL;
+
+	if ((*stack) == NULL)
+		hndlerr("can't pop an empty stack", NULL, line_number);
+
+	if ((*stack)->next)
+		tmp = (*stack)->next;
+	free(*stack);
+	*stack = NULL;
+	if (tmp)
+	{
+		tmp->prev = NULL;
+		*stack = tmp;
+	}
+}
+
+/**
  * pint - prints top of the stack
  * @stack: the list
  * @line_number: Current line in monty file

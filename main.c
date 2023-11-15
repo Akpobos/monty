@@ -29,7 +29,8 @@ int main(int argc, char **argv)
 	}
 	free(line);
 	line = NULL;
-	free_stack(&stack);
+	if (stack)
+		free_stack(&stack);
 	fclose(stream);
 	exit(EXIT_SUCCESS);
 }
