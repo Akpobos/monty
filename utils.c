@@ -28,12 +28,14 @@ int endswith(char *str, char *end)
  */
 int validate_input(void)
 {
-	unsigned int i;
+	unsigned int i = 0;
 	bool isvalid = true;
 
 	if (input == NULL)
 		return (false);
-	for (i = 0; i < strlen(input); i++)
+	if (input[0] == '-')
+		i++;
+	for (; i < strlen(input); i++)
 	{
 		if (input[i] < 48 || input[i] > 57)
 		{
