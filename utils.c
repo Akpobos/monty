@@ -24,20 +24,24 @@ int endswith(char *str, char *end)
 
 /**
  * validate_input - Validates the input
- * @line_number: The line number
- * Return: Nothing
+ * Return: boolean
  */
-void validate_input(unsigned int line_number)
+int validate_input()
 {
 	unsigned int i;
+	bool isvalid = true;
 
 	if (input == NULL)
-		hndlerr("usage: push integer", NULL, line_number);
+		return (false);
 	for (i = 0; i < strlen(input); i++)
 	{
 		if (input[i] < 48 || input[i] > 57)
-			hndlerr("usage: push integer", NULL, line_number);
+		{
+			isvalid = false;
+			break;
+		}
 	}
+	return (isvalid);
 }
 
 /**

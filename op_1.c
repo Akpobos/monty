@@ -10,7 +10,11 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new = NULL;
 
-	validate_input(line_number);
+	if (!validate_input())
+	{
+		free_stack(stack);
+		hndlerr("usage: push integer", NULL, line_number);
+	}
 	new = malloc(sizeof(*new));
 	if (new == NULL)
 		hndlerr("Error: malloc failed", NULL, 0);
