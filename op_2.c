@@ -73,12 +73,12 @@ void sub(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * div - divide top two
+ * _div - divide top two
  * @stack: the list
  * @line_number: Current line in monty file
  * Return: Nothing
  */
-void div(stack_t **stack, unsigned int line_number)
+void _div(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp = NULL;
 	int result;
@@ -104,12 +104,12 @@ void div(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * mul - multiply top two
+ * _mul - multiply top two
  * @stack: the list
  * @line_number: Current line in monty file
  * Return: Nothing
  */
-void mul(stack_t **stack, unsigned int line_number)
+void _mul(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp = NULL;
 	int result;
