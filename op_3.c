@@ -102,3 +102,27 @@ void _rotl(stack_t **stack, unsigned int line_number)
 	*stack = (*stack)->next;
 	tmp->next->next = NULL;
 }
+
+/**
+ * _rotr - rotate stack
+ * @stack: the list
+ * @line_number: Current line in monty file
+ * Return: Nothing
+ */
+void _rotr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *copy;
+
+	(void)line_number;
+
+	copy = *stack;
+	if (*stack == NULL || (*stack)->next == NULL)
+		return;
+	while (copy->next)
+		copy = copy->next;
+	copy->next = *stack;
+	copy->prev->next = NULL;
+	copy->prev = NULL;
+	(*stack)->prev = copy;
+	(*stack) = copy;
+}
