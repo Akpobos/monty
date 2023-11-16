@@ -79,3 +79,26 @@ void _pstr(stack_t **stack, unsigned int line_number)
 	putchar((*stack)->n);
 	_pstr(&(*stack)->next, line_number);
 }
+
+/**
+ * _rotl - swap top two
+ * @stack: the list
+ * @line_number: Current line in monty file
+ * Return: Nothing
+ */
+void _rotl(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp = *stack;
+
+	(void)line_number;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+		return;
+	while (tmp->next)
+		tmp = tmp->next;
+	(*stack)->next->prev = NULL;
+	(*stack)->prev = tmp;
+	tmp->next = *stack;
+	*stack = (*stack)->next;
+	tmp->next->next = NULL;
+}
