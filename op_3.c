@@ -57,3 +57,25 @@ void _pchar(stack_t **stack, unsigned int line_number)
 	}
 	printf("%c\n", (*stack)->n);
 }
+
+/**
+ * _pstr - prints the string starting at the top of the stack
+ * @stack: the list
+ * @line_number: Current line in monty file
+ * Return: Nothing
+ */
+void _pstr(stack_t **stack, unsigned int line_number)
+{
+	if (
+			(*stack) == NULL ||
+			(*stack)->n <= 0 ||
+			(*stack)->n > 127
+	   )
+	{
+		putchar('\n');
+		return;
+	}
+
+	putchar((*stack)->n);
+	_pstr(&(*stack)->next, line_number);
+}
