@@ -17,7 +17,7 @@ void interpret(stack_t **stack, char *line, unsigned int ln)
 		{ "push", push }, { "pint", pint }, { "pall", pall },
 		{ "pop", pop }, { "nop", nop }, { "swap", swap },
 		{ "add", add }, { "sub", sub }, {"div", _div},
-		{ "mul", _mul }, { "mod", _mod },
+		{ "mul", _mul }, { "mod", _mod }, { "pchar", _pchar },
 		{ NULL, NULL }
 	};
 
