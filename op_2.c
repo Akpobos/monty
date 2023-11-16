@@ -90,7 +90,7 @@ void div(stack_t **stack, unsigned int line_number)
 			)
 	{
 		free_stack(stack);
-		if ((*stack)->n == 0)
+		if (*stack != NULL && (*stack)->n == 0)
 			hndlerr("division by zero", NULL, line_number);
 		else
 			hndlerr("can't div, stack too short", NULL, line_number);
