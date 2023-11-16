@@ -14,14 +14,10 @@ void interpret(stack_t **stack, char *line, unsigned int ln)
 	unsigned int i;
 	void (*f)(stack_t **stack, unsigned int ln) = NULL;
 	instruction_t ops[] = {
-		{ "push", push },
-		{ "pint", pint },
-		{ "pall", pall },
-		{ "pop", pop },
-		{ "nop", nop },
-		{ "swap", swap },
-		{ "add", add },
-		{ "sub", sub },
+		{ "push", push }, { "pint", pint }, { "pall", pall },
+		{ "pop", pop }, { "nop", nop }, { "swap", swap },
+		{ "add", add }, { "sub", sub }, {"div", div},
+		{ "mul", mul },
 		{ NULL, NULL }
 	};
 
