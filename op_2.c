@@ -89,11 +89,16 @@ void _div(stack_t **stack, unsigned int line_number)
 			(*stack)->n == 0
 			)
 	{
-		free_stack(stack);
 		if (*stack != NULL && (*stack)->n == 0)
+		{
+			free_stack(stack);
 			hndlerr("division by zero", NULL, line_number);
+		}
 		else
+		{
+			free_stack(stack);
 			hndlerr("can't div, stack too short", NULL, line_number);
+		}
 	}
 	result = (*stack)->next->n / (*stack)->n;
 	(*stack)->next->n = result;
