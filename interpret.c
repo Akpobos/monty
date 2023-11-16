@@ -21,6 +21,7 @@ void interpret(stack_t **stack, char *line, unsigned int ln)
 		{ "nop", nop },
 		{ "swap", swap },
 		{ "add", add },
+		{ "sub", sub },
 		{ NULL, NULL }
 	};
 
