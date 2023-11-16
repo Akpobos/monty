@@ -1,4 +1,5 @@
+push 2
 push 10
-push 0
-div
+push 3
+mod
 pall

@@ -28,7 +28,7 @@ void _mod(stack_t **stack, unsigned int line_number)
 			hndlerr("can't mod, stack too short", NULL, line_number);
 		}
 	}
-	result = (*stack)->next->n & (*stack)->n;
+	result = (*stack)->next->n % (*stack)->n;
 	(*stack)->next->n = result;
 	(*stack)->next->prev = NULL;
 	tmp = (*stack);
