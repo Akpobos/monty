@@ -83,10 +83,17 @@ void div(stack_t **stack, unsigned int line_number)
 	stack_t *tmp = NULL;
 	int result;
 
-	if (*stack == NULL || (*stack)->next == NULL)
+	if (
+			*stack == NULL ||
+			(*stack)->next == NULL ||
+			(*stack)->n == 0
+			)
 	{
 		free_stack(stack);
-		hndlerr("can't div, stack too short", NULL, line_number);
+		if ((*stack)->n == 0)
+			hndlerr("division by zero", NULL, line_number);
+		else
+			hndlerr("can't div, stack too short", NULL, line_number);
 	}
 	result = (*stack)->next->n / (*stack)->n;
 	(*stack)->next->n = result;
